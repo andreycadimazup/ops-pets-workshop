@@ -12,7 +12,7 @@ on:
       provider:
         description: 'Escolha o Provider (gemini, claude, copilot, codex)'
         required: true
-        default: 'gemini'
+        default: 'codex'
         type: choice
         options:
           - gemini
@@ -36,7 +36,7 @@ jobs:
       repository-projects: write
 
     env:
-      SELECTED_PROVIDER: ${{ github.event.inputs.provider || 'gemini' }}
+      SELECTED_PROVIDER: ${{ github.event.inputs.provider || 'codex' }}
       GH_PROMPT_DISABLED: 1
 
     steps:
