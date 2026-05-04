@@ -70,7 +70,7 @@ jobs:
       # --- SETUP CODEX (OPENAI) ---
       - name: Setup Codex (OpenAI)
         if: env.SELECTED_PROVIDER == 'codex'
-        run: npm install -g openai
+        run: npm install -g openai@latest
 
       # --- EXECUTION (HEADLESS MODE) ---
       - name: Run Orchestrator
