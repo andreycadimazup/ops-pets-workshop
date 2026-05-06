@@ -25,9 +25,9 @@ jobs:
     # Dispara se houver uma label de 'status:', um comentário, ou dispatch manual
     if: |
       github.event_name == 'workflow_dispatch' ||
-      contains(github.event.issue.labels.*.name, 'status:') || 
-      contains(github.event.pull_request.labels.*.name, 'status:') ||
-      github.event_name == 'issue_comment'
+      github.event_name == 'issue_comment' ||
+      (github.event_name == 'issues' && contains(github.event.label.name, 'status:')) ||
+      (github.event_name == 'pull_request' && contains(github.event.label.name, 'status:'))
     runs-on: ubuntu-latest
     permissions:
       contents: write
