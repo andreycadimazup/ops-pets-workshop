@@ -110,5 +110,5 @@ jobs:
             echo "Using Codex (OpenAI)..."
             # OpenAI CLI é inerentemente não-interativo em chamadas de chat create
             # openai chat create -m gpt-4o -g user "Baseie-se nas skills em .agents/skills/ e execute: $PROMPT"
-            codex exec "Baseie-se nas skills em .agents/skills/ e execute: $PROMPT" --enable use_legacy_landlock --sandbox none
+            codex exec "Baseie-se nas skills em .agents/skills/ e execute: $PROMPT" --enable use_legacy_landlock --yolo
           fi
